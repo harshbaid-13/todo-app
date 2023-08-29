@@ -63,7 +63,7 @@ export async function DELETE(req, { params }) {
       message: "Todo Deleted",
     });
   } catch (error) {
-    console.error("Error deleting team:", error);
+    console.error("Error deleting todo:", error);
     return NextResponse.json(
       { message: "Internal Server Error" },
       { status: 500 }

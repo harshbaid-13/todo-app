@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Navbar = () => {
     return (
-        <nav className="bg-transparent fixed w-full z-20 top-0 left-0 border-b border-gray-200">
+        <nav className="bg-[#f533d9] fixed w-full z-50 top-0 left-0 border-b border-gray-200">
             <div className="max-w-screen-xl flex flex-wrap align-middle items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex gap-2 items-center text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10">

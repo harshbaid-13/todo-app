@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Preahvihear } from "next/font/google";
-import { NextAuthProvider } from "./Providers";
+import { LoaderProvider, NextAuthProvider, ReduxProvider } from "./Providers";
 
 const preahvihear = Preahvihear({ subsets: ["latin"], weight: ["400"] });
 
@@ -15,8 +15,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={preahvihear.className}>
         <NextAuthProvider>
-          <Navbar />
-          <div className="mt-32">{children}</div>
+          <ReduxProvider>
+            <LoaderProvider>
+              <Navbar />
+              <div className="mt-32">{children}</div>
+            </LoaderProvider>
+          </ReduxProvider>
         </NextAuthProvider>
       </body>
     </html>
