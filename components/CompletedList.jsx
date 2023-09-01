@@ -3,11 +3,11 @@ import Task from './Task'
 import { useSelector } from 'react-redux';
 
 const CompletedList = () => {
-    const todos = useSelector((state) => state.todo.todos).filter(todo => todo.status === 'DONE');
+    const todos = useSelector((state) => state?.todo?.todos).filter(todo => todo?.status === 'DONE');
     return (
         <>
             {todos?.map((todo) => (
-                <Task key={todo._id} id={todo._id} title={todo.title} description={todo.description} />
+                <Task key={todo?._id} heading={"Done"} startBtn={false} id={todo?._id} title={todo?.title} description={todo?.description} />
             ))}
         </>
     )

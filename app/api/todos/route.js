@@ -16,8 +16,11 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-    await Todo.create({ user, title, description, status });
-    return NextResponse.json({ message: "Todo Added" }, { status: 201 });
+    const todo = await Todo.create({ user, title, description, status });
+    return NextResponse.json(
+      { success: true, message: "Todo Added", data:todo },
+      { status: 201 }
+    );
   } catch (err) {
     return NextResponse.json(
       { message: "Unable to add Todo" },

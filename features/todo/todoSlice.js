@@ -9,7 +9,8 @@ export const todoSlice = createSlice({
   name: "todo",
   initialState,
   reducers: {
-    loading: (state, action) => {
+    setLoading: (state, action) => {
+      console.log(action.payload);
       state.loading = action.payload;
     },
     setTodos: (state, action) => {
@@ -22,14 +23,16 @@ export const todoSlice = createSlice({
       state.todos = state.todos.filter((todo) => todo._id !== action.payload);
     },
     editTodo: (state, action) => {
-      objIndex = state.todos.findIndex((obj) => obj._id === action.payload._id);
-      state.todos[objIndex].title = action.payload.title;
-      state.todos[objIndex].description = action.payload.description;
-      state.todos[objIndex].status = action.payload.status;
+      const todo = state.todos.findIndex(
+        (obj) => obj._id === action.payload._id
+      );
+      state.todos[todo].title = action.payload.title;
+      state.todos[todo].description = action.payload.description;
+      state.todos[todo].status = action.payload.status;
     },
   },
 });
-export const { loading, setTodos, addTodo, deleteTodo, editTodo } =
+export const { setLoading, setTodos, addTodo, deleteTodo, editTodo } =
   todoSlice.actions;
 
 export default todoSlice.reducer;

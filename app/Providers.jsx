@@ -11,8 +11,3 @@ export const NextAuthProvider = ({ children }) => {
 export const ReduxProvider = ({ children }) => {
     return <Provider store={store}>{children}</Provider>
 }
-
-export const LoaderProvider = ({ children }) => {
-    const loading = useSelector((state) => state.todo.loading);
-    return <div>{loading ? <Loader /> : children}</div>
-}

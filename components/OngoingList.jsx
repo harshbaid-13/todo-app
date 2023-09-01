@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import Task from './Task'
 
 const OngoingList = () => {
-    const todos = useSelector((state) => state.todo.todos).filter(todo => todo.status === 'DOING');
+    const todos = useSelector((state) => state?.todo?.todos).filter(todo => todo?.status === 'DOING');
     return (
         <>
             {todos?.map((todo) => (
-                <Task key={todo._id} id={todo._id} title={todo.title} description={todo.description} />
+                <Task key={todo?._id} heading={"Doing"} startBtn={false} id={todo?._id} title={todo?.title} description={todo?.description} />
             ))}
         </>
     )

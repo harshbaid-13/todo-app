@@ -21,18 +21,29 @@ export async function PUT(req, { params }) {
         { status: 400 }
       );
     }
-    const updatedTodo = await Todo.findByIdAndUpdate(
+    const updatedTodo = await Todo.findOneAndUpdate(
       { _id: id, user: user._id },
       { title, description, status },
       { new: true }
     );
-    return NextResponse.json({
-      success: true,
-      message: "Todo updated successfully",
-      data: updatedTodo,
-    });
+    if (updatedTodo)
+      return NextResponse.json({
+        success: true,
+        message: "Todo updated successfully",
+        data: updatedTodo,
+      });
+    else
+      return NextResponse.json({
+        success: false,
+        message: "Cannot find todo",
+      });
   } catch (error) {
-    console.log(error);
+    return NextResponse.json(
+      {
+        message: "Unable to update Todo",
+      },
+      { status: 500 }
+    );
   }
 }
 export async function DELETE(req, { params }) {
@@ -63,9 +74,8 @@ export async function DELETE(req, { params }) {
       message: "Todo Deleted",
     });
   } catch (error) {
-    console.error("Error deleting todo:", error);
     return NextResponse.json(
-      { message: "Internal Server Error" },
+      { message: "Unable to delete Todo" },
       { status: 500 }
     );
   }
