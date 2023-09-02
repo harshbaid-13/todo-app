@@ -14,7 +14,7 @@ const authOptions = {
   callbacks: {
     async signIn({ user, account, profile }) {
       const { name, email } = profile;
-      if (account.provider === "google" && profile.email_verified === true) {
+      if (account.provider === "google") {
         try {
           await connectToDB();
           //if user already exists
