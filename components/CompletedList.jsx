@@ -6,8 +6,8 @@ const CompletedList = () => {
     const todos = useSelector((state) => state?.todo?.todos).filter(todo => todo?.status === 'DONE');
     return (
         <>
-            {todos?.map((todo) => (
-                <Task key={todo?._id} heading={"Done"} startBtn={false} id={todo?._id} title={todo?.title} description={todo?.description} />
+            {todos?.map((todo, index) => (
+                <Task key={todo?._id} index={index} heading={"Done"} startBtn={false} id={todo?._id} title={todo?.title} description={todo?.description} />
             ))}
         </>
     )

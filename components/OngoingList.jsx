@@ -6,8 +6,8 @@ const OngoingList = () => {
     const todos = useSelector((state) => state?.todo?.todos).filter(todo => todo?.status === 'DOING');
     return (
         <>
-            {todos?.map((todo) => (
-                <Task key={todo?._id} heading={"Doing"} startBtn={false} id={todo?._id} title={todo?.title} description={todo?.description} />
+            {todos?.map((todo, index) => (
+                <Task key={todo?._id} index={index} heading={"Doing"} startBtn={false} id={todo?._id} title={todo?.title} description={todo?.description} />
             ))}
         </>
     )
