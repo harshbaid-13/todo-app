@@ -1,6 +1,4 @@
 const TodoModal = ({ heading, closeModal, id, action, handleChange, formData }) => {
-    console.log(id);
-    console.log(id !== "null");
     return (
         <>
 

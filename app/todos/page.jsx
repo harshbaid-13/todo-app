@@ -30,7 +30,6 @@ const Todos = () => {
         getAllTodos();
     }, [])
     const onDragEnd = async (result) => {
-        console.log(result);
         const { source, destination } = result;
         if (!destination) return;
         if (source.droppableId === destination.droppableId && source.index === destination.index) return;

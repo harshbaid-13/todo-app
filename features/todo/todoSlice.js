@@ -10,7 +10,6 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     setLoading: (state, action) => {
-      console.log(action.payload);
       state.loading = action.payload;
     },
     setTodos: (state, action) => {
