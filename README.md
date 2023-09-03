@@ -2,45 +2,68 @@
 
 Todollo is a productivity and task management application designed to help individuals streamline their daily activities and get things done with ease. 
 
+# Task Management Application
+
 ## Overview
 
-Briefly describe what your project is about and what problem it solves. Mention its key features and functionalities.
+This task management application is designed to streamline your daily activities and enhance your productivity. It includes a front-end user interface and a back-end API that work seamlessly together to manage tasks efficiently.
+
+### Front-end Features
+
+1. **Homepage**: The homepage displays all tasks, categorizing them into three status groups: To Do, Doing, and Done.
+
+2. **Task Card**: Each task is showcased with its title and description, providing users with essential details.
+
+3. **Add Task**: Users can easily create a new task by filling out a form that prompts them for the title and description of the task.
+
+4. **Edit Task**: The application allows users to edit the title and description of existing tasks, ensuring they can keep their tasks up-to-date.
+
+5. **Delete Task**: Implementing a delete feature enables users to remove tasks permanently when needed.
+
+6. **Task Status**: Users can effortlessly drag and drop tasks between the To Do, Doing, and Done categories, allowing for efficient task management.
+
+7. **Responsive Design**: The application is fully responsive, ensuring that it functions seamlessly and maintains a consistent visual appearance on mobile devices.
+
+### Back-end Features
+
+1. **API Endpoints**: A robust back-end API has been created to support CRUD (Create, Read, Update, Delete) operations for tasks.
+
+2. **Database Storage**: All tasks are stored in a database, ensuring data persistence and reliability.
+
+With this task management application, you can organize your tasks, track their progress, and improve your productivity. Whether you're managing personal to-dos or collaborating with a team, this application has you covered.
+
+Feel free to explore the live demo and start managing your tasks effectively!
+
+## Live Demo
+
+You can access and test the live demo of the application by following this link: [Live Demo](https://todollo.vercel.app)
+
+**Note:** The application features one-click Google Sign-In for a hassle-free experience.
 
 ## Screenshot
 
-Insert a screenshot or image showcasing the application interface. You can use the following markdown code to embed an image:
-
+Snapshot of the Home Page
 ![HomePage.png](https://res.cloudinary.com/communichat/image/upload/v1693767944/HomePage_gb1eyt.png)
 
-## Live Demo
-You can access the live demo of the application and sign in using your Google account.
+Snapshot of the Todos Page
+![TodosPage.png](https://res.cloudinary.com/communichat/image/upload/v1693767944/TodosPage_qnosdc.png)
 
-[Live Demo](https://todollo.vercel.app/)
+Snapshot of the Drag And Drop Functionality 
+![DragAndDrop.png](https://res.cloudinary.com/communichat/image/upload/v1693767944/DragAndDrop_dz536e.png)
 
-## Table of Contents (Optional)
-
-You can include a table of contents if your README is long and contains multiple sections.
-
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Contributing](#contributing)
-4. [License](#license)
 
 ## Installation
-
-Provide instructions on how to install and set up your project. Include any dependencies and environment configuration if necessary.
-
-```bash
-# Example installation steps
-npm install
-npm start
-
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, download the dependencies:
+
+```bash
+npm install
+```
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -51,22 +74,3 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
