@@ -10,7 +10,7 @@ Briefly describe what your project is about and what problem it solves. Mention 
 
 Insert a screenshot or image showcasing the application interface. You can use the following markdown code to embed an image:
 
-![Application Screenshot](HomePage.png)
+![HomePage.png](https://github.com/harshbaid-13/todo-app/blob/master/HomePage.png)
 
 ## Live Demo
 You can access the live demo of the application and sign in using your Google account.
