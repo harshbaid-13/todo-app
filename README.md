@@ -1,4 +1,6 @@
-# Project Name
+# Todollo
+
+Todollo is a productivity and task management application designed to help individuals streamline their daily activities and get things done with ease. 
 
 ## Overview
 
@@ -8,13 +10,12 @@ Briefly describe what your project is about and what problem it solves. Mention 
 
 Insert a screenshot or image showcasing the application interface. You can use the following markdown code to embed an image:
 
-![Application Screenshot](screenshot.png)
+![Application Screenshot](HomePage.png)
 
 ## Live Demo
+You can access the live demo of the application and sign in using your Google account.
 
-Provide a live URL where users can access and test your application. If applicable, include any login credentials or instructions for using the application.
-
-[Live Demo](https://example.com)
+[Live Demo](https://todollo.vercel.app/)
 
 ## Table of Contents (Optional)
 
