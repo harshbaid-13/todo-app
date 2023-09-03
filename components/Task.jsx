@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import TodoModal from "./TodoModal";
 import { Draggable } from "react-beautiful-dnd";
 
-const Task = ({ id, title, index, description, heading, startBtn }) => {
+const Task = ({ id, title, index, description, heading, startBtn, checkBtn }) => {
 
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({ title: title, description: description })
@@ -40,6 +40,20 @@ const Task = ({ id, title, index, description, heading, startBtn }) => {
         } catch (err) { console.error(err) }
         setShowModal(false);
     }
+    const handleCheck = async () => {
+        try {
+            const { data } = await axios.put(
+                `${process.env.NEXT_PUBLIC_BASE_URL}/api/todos/${id}`, {
+                ...formData, status: "DONE"
+            })
+            if (data.success) {
+                dispatch(editTodo(data.data));
+            }
+            else {
+                alert(data?.message);
+            }
+        } catch (err) { console.error(err) }
+    }
     const handleStart = async () => {
         try {
             const { data } = await axios.put(
@@ -53,7 +67,6 @@ const Task = ({ id, title, index, description, heading, startBtn }) => {
                 alert(data?.message);
             }
         } catch (err) { console.error(err) }
-        setShowModal(false);
     }
     const closeModal = () => {
         setShowModal(false);
@@ -66,10 +79,18 @@ const Task = ({ id, title, index, description, heading, startBtn }) => {
             <Draggable draggableId={id.toString()} index={index}>
                 {
                     (provided, snapshot) => (
-                        <div ref={provided.innerRef} {...provided.dragHandleProps} {...provided.draggableProps} className={`${snapshot.isDragging ? "border-black" : ""} transition ease-in-out delay-100 border hover:-translate-y-1 hover:scale-105 duration-100 hover:border-black	b text-lg rounded-md p-2 bg-white`}>
-                            <div className="flex justify-between  ">
-                                <div className="">
-                                    {title}
+                        <div ref={provided.innerRef} {...provided.dragHandleProps} {...provided.draggableProps} className={`${snapshot.isDragging ? "border-black" : ""} transition ease-in-out delay-100 border hover:-translate-y-1 hover:scale-105 duration-100 hover:border-black text-lg rounded-md p-2 bg-white`}>
+                            <div className="flex justify-between align-middle">
+                                <div className="flex align-middle gap-x-2">
+                                    {checkBtn && <div>
+                                        <button type="button" className="p-0.5 text-xs font-medium text-center border border-black inline-flex items-center text-black bg-white-700 rounded-md hover:bg-green-800 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 " onClick={handleCheck}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </button>
+
+                                    </div>}
+                                    <div>{title}</div>
                                 </div>
                                 <div className="flex gap-1">
                                     <div>

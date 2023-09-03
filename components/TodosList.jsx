@@ -7,7 +7,7 @@ const TodosList = () => {
     return (
         <>
             {todos?.map((todo, index) => (
-                <Task key={todo?._id} index={index} heading={"ToDo"} startBtn={true} id={todo?._id} title={todo?.title} description={todo?.description} />
+                <Task key={todo?._id} index={index} heading={"ToDo"} startBtn={true} checkBtn={true} id={todo?._id} title={todo?.title} description={todo?.description} />
             ))}
         </>
 
