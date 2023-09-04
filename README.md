@@ -2,7 +2,11 @@
 
 Todollo is a productivity and task management application designed to help individuals streamline their daily activities and get things done with ease. 
 
-# Task Management Application
+## Contents
+
+1. [LiveDemo](#livedemo)
+2. [ScreenShots](#screenshot)
+3. [Installation](#installation) 
 
 ## Overview
 
@@ -34,7 +38,7 @@ With this task management application, you can organize your tasks, track their 
 
 Feel free to explore the live demo and start managing your tasks effectively!
 
-## Live Demo
+## LiveDemo
 
 You can access and test the live demo of the application by following this link: [Live Demo](https://todollo.vercel.app)
 
@@ -55,8 +59,6 @@ Snapshot of the Drag And Drop Functionality
 ## Installation
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
 
 First, download the dependencies:
 
